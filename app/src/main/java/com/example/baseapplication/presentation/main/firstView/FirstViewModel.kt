@@ -22,12 +22,12 @@ class FirstViewModel(
         execute {
             getSampleDataUseCase(GetSampleDataUseCase.Params("sampleId")).fold(
                 handleSuccess = {
-                    sampleDataList.value = listOf(
+                    sampleDataList.postValue(listOf(
                         SampleDataItems.SampleDataItem(
                             it.name,
                             it.url
                         )
-                    )
+                    ))
                 },
                 handleError = {
                     // Show error view
