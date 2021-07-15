@@ -1,4 +1,4 @@
-package com.example.baseapplication.presentation.base
+package com.example.baseapplication.presentation.core.base
 
 import android.os.Bundle
 import android.view.Menu

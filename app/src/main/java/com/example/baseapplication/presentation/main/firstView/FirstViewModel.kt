@@ -1,16 +1,18 @@
 package com.example.baseapplication.presentation.main.firstView
 
 import androidx.lifecycle.MutableLiveData
-import com.example.baseapplication.EMPTY_STRING
 import com.example.baseapplication.domain.core.execute
 import com.example.baseapplication.domain.usecases.GetSampleDataUseCase
-import com.example.baseapplication.presentation.base.BaseViewModel
+import com.example.baseapplication.presentation.core.base.BaseViewModel
+import com.example.baseapplication.presentation.main.firstView.adapter.SampleDataItems
 
 class FirstViewModel(
     private val getSampleDataUseCase: GetSampleDataUseCase
 ) : BaseViewModel() {
 
-    var firstViewModelText: MutableLiveData<String> = MutableLiveData(EMPTY_STRING)
+    var sampleDataList: MutableLiveData<List<SampleDataItems.SampleDataItem>> = MutableLiveData(
+        emptyList()
+    )
 
     init {
         getSampleData()
@@ -20,10 +22,15 @@ class FirstViewModel(
         execute {
             getSampleDataUseCase(GetSampleDataUseCase.Params("sampleId")).fold(
                 handleSuccess = {
-                    firstViewModelText.value = it.name
-                                },
+                    sampleDataList.value = listOf(
+                        SampleDataItems.SampleDataItem(
+                            it.name,
+                            it.url
+                        )
+                    )
+                },
                 handleError = {
-                    firstViewModelText.value = "Error"
+                    // Show error view
                 }
             )
         }

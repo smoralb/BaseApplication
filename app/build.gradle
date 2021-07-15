@@ -23,8 +23,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         buildFeatures {
+            viewBinding true
             dataBinding true
         }
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -37,6 +42,7 @@ dependencies {
     implementation basic.app_compat_dependency
     implementation basic.material_dependency
     implementation basic.constraint_dependency
+    implementation basic.recyclerview_dependency
     //Koin
     implementation koin.koin_dependency
     implementation koin.koin_viewmodel_dependency
@@ -53,5 +59,7 @@ dependencies {
     implementation network.okhttp_loggin_interceptor
     implementation network.moshi_dependency
     implementation network.moshi_converter_dependency
+    //Coil
+    implementation coil.coil_dependency
 
 }

@@ -5,7 +5,7 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.example.baseapplication.R
 import com.example.baseapplication.databinding.FragmentSecondBinding
-import com.example.baseapplication.presentation.base.BaseFragment
+import com.example.baseapplication.presentation.core.base.BaseFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SecondFragment : BaseFragment<FragmentSecondBinding, SecondViewModel>(R.layout.fragment_second) {
