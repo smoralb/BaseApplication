@@ -1,8 +1,7 @@
-package com.example.baseapplication.presentation.core.extensions
+package com.example.core.extensions
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.baseapplication.data.core.Result
 import kotlinx.coroutines.launch
 
 fun ViewModel.execute(useCase: suspend () -> Unit) {

@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 apply plugin: "kotlin-kapt"
@@ -8,7 +8,6 @@ android {
     buildToolsVersion versions.buil_tools_version
 
     defaultConfig {
-        applicationId "com.example.baseapplication"
         minSdkVersion Integer.parseInt(versions.min_sdk_version)
         targetSdkVersion Integer.parseInt(versions.target_sdk_version)
         versionCode 1
@@ -23,13 +22,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         buildFeatures {
-            viewBinding true
             dataBinding true
         }
-    }
-    compileOptions {
-        sourceCompatibility 1.8
-        targetCompatibility 1.8
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -37,5 +31,28 @@ android {
 }
 
 dependencies {
-    implementation project (':core')
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    api basic.core_ktx_dependency
+    api basic.app_compat_dependency
+    api basic.material_dependency
+    api basic.constraint_dependency
+    //Koin
+    api koin.koin_dependency
+    api koin.koin_viewmodel_dependency
+    //Navigation
+    api navigation.navigation_dependency
+    api navigation.fragment_dependency
+    //Testing
+    api testing.jUnit_dependency
+    api testing.jUnit_test_dependency
+    api testing.espresso_dependency
+    //Retrofit, okhttp3, moshi
+    api network.retrofit_dependency
+    api network.okhttp3_dependency
+    api network.okhttp_loggin_interceptor
+    api network.moshi_dependency
+    api network.moshi_converter_dependency
+    //Coil
+    implementation coil.coil_dependency
+
 }
