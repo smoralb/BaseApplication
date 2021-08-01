@@ -4,14 +4,17 @@ import com.example.baseapplication.domain.model.SampleDataModel
 import com.example.baseapplication.presentation.main.firstView.adapter.SampleDataItems
 
 interface FirstFragmentMapper {
-    fun mapItems(model: SampleDataModel): SampleDataItems.SampleDataItem
+    fun mapItems(model: List<SampleDataModel>): List<SampleDataItems.SampleDataItem>
 }
 
 class FirstFragmentMapperImpl : FirstFragmentMapper {
 
-    override fun mapItems(model: SampleDataModel) = SampleDataItems.SampleDataItem(
-        name = model.name,
-        url = model.url
-    )
+    override fun mapItems(model: List<SampleDataModel>) =
+        model.map {
+            SampleDataItems.SampleDataItem(
+                it.name,
+                it.url
+            )
+        }
 
 }
