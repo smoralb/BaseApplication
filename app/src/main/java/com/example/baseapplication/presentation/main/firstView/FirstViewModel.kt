@@ -25,7 +25,7 @@ class FirstViewModel(
         execute {
             getSampleDataUseCase(GetSampleDataUseCase.Params("sampleId")).fold(
                 handleSuccess = {
-                    sampleDataList update listOf(mapper.mapItems(it))
+                    sampleDataList update mapper.mapItems(it)
                 },
                 handleError = {
                     // Show error view
