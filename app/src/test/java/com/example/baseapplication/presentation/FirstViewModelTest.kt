@@ -45,6 +45,7 @@ class FirstViewModelTest : BaseViewModelUnitTest() {
         DynamicTest.dynamicTest("$testCase") {
             runBlockingTest {
                 whenever(getSampleDataUseCase(any())).thenReturn(testCase)
+                whenever(mapper.mapItems(any(), (any()))).thenReturn(emptyList())
 
                 viewModel.initialize()
 
