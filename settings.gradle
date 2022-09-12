@@ -1,2 +1,4 @@
 rootProject.name = "BaseApplication"
 include ':core', ':app'
+include ':resources'
+include ':ft-home'

@@ -7,7 +7,6 @@ dependencies {
     api basic.values()
     api koin.values()
     api navigation.values()
-    //Retrofit, okhttp3, moshi
     api network.values()
     implementation coil.values()
     api testing.values()

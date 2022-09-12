@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
 apply from: "$project.rootDir/jacoco.gradle"
 apply from: "$project.rootDir/base.gradle"
-apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 dependencies {
     implementation project (':core')
+    implementation project (':resources')
+    implementation project (':ft-home')
 }

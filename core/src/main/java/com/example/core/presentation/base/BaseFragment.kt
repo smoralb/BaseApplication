@@ -19,10 +19,6 @@ abstract class BaseFragment<S : BaseState, DB : ViewDataBinding, out VM : BaseVi
     private var _binding: DB? = null
     abstract val viewModel: VM
 
-    /**
-     * This only can be accessed from child Fragments and only valid in onCreateView and onDestroyView
-     * In that way, the binding variable it's only exposed to be used, not to modify the value
-     */
     val binding: DB get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
