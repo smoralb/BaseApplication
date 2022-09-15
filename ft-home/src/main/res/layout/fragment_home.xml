@@ -8,13 +8,13 @@
 
         <variable
             name="viewModel"
-            type="com.smb.ft_home.presentation.main.firstView.FirstViewModel" />
+            type="com.smb.ft_home.presentation.ui.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.main.firstView.FirstFragment">
+        tools:context=".presentation.ui.home.HomeFragment">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/toolbar"

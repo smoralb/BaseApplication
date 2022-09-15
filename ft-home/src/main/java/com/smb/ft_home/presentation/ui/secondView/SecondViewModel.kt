@@ -1,10 +1,9 @@
-package com.smb.ft_home.presentation.main.secondView
+package com.smb.ft_home.presentation.ui.secondView
 
 import androidx.lifecycle.MutableLiveData
 import com.smb.ft_home.domain.usecases.GetSampleDataUseCase
 import com.example.core.extensions.EMPTY_STRING
 import com.example.core.extensions.execute
-import com.example.core.extensions.update
 import com.example.core.presentation.base.BaseViewModel
 
 class SecondViewModel(

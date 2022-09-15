@@ -1,4 +1,4 @@
-package com.smb.ft_home.presentation.main.secondView
+package com.smb.ft_home.presentation.ui.secondView
 
 import android.os.Bundle
 import android.view.View

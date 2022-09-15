@@ -1,15 +1,15 @@
-package com.smb.ft_home.presentation.main.firstView.adapter
+package com.smb.ft_home.presentation.ui.home.adapter
 
 import com.example.core.presentation.adapters.BaseItem
 
-sealed class SampleDataItems : BaseItem {
-    data class SampleDataItem(
+sealed class HomeDataItems : BaseItem {
+    data class HomeDataItem(
         val isbn: String,
         val title: String,
         val description: String,
         val publisher: String,
         val onItemClickListener: (String) -> Unit
-    ) : SampleDataItems() {
+    ) : HomeDataItems() {
         override fun onItemClick() {
             onItemClickListener(isbn)
         }
