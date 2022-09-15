@@ -30,8 +30,8 @@ class FirstViewModel(
         _viewState update FirstViewState.Loading
         execute {
             getSampleDataUseCase(Unit).fold(
-                onSuccess = {
-                    itemList update mapper.mapItems(it.bookDetails, onItemClickListener)
+                onSuccess = { bookList ->
+                    itemList update mapper.mapItems(bookList, onItemClickListener)
                     _viewState update FirstViewState.HideLoading
                 },
                 onFailure = {

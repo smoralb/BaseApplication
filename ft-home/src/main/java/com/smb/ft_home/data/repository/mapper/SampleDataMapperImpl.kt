@@ -1,25 +1,39 @@
 package com.smb.ft_home.data.repository.mapper
 
-import com.smb.ft_home.data.entity.SampleApiChildDetailsEntity
-import com.smb.ft_home.data.entity.SampleApiResponseEntity
-import com.smb.ft_home.domain.model.SampleChildDetailsModel
-import com.smb.ft_home.domain.model.SampleChildModel
+import com.smb.ft_home.data.entity.BookDetailsEntity
+import com.smb.ft_home.data.entity.BookItemEntity
+import com.smb.ft_home.data.entity.BooksResultEntity
+import com.smb.ft_home.domain.model.Book
+import com.smb.ft_home.domain.model.BookDetails
+import com.smb.ft_home.domain.model.BooksList
 
 class SampleDataMapperImpl : SampleDataMapper {
 
-    override fun toDomainModel(entity: SampleApiResponseEntity?): SampleChildModel =
-        entity?.sampleChildResponseEntity?.first().let { section ->
-            SampleChildModel(
-                bookDetails = section?.bookDetails?.map { mapToChildrenDetails(it) }.orEmpty()
-            )
-        }
-
-
-    private fun mapToChildrenDetails(entity: SampleApiChildDetailsEntity?): SampleChildDetailsModel =
-        SampleChildDetailsModel(
-            isbn = entity?.isbn.orEmpty(),
-            title = entity?.title.orEmpty(),
-            description = entity?.description.orEmpty(),
-            publisher = entity?.publisher.orEmpty()
+    override fun toDomainModel(entity: BooksResultEntity?): BooksList =
+        BooksList(
+            booksList = mapToBook(entity?.sampleChildResponseEntity)
         )
+
+    private fun mapToBook(entity: List<BookItemEntity>?) =
+        entity?.map {
+            Book(
+                rank = it.rank,
+                amazonUrl = it.amazonUrl,
+                publishedData = it.publishedDate,
+                booksDetails = mapToBooksDetails(it.bookDetails)
+            )
+        }.orEmpty()
+
+    private fun mapToBooksDetails(entity: List<BookDetailsEntity>?): List<BookDetails> =
+        entity?.map {
+            BookDetails(
+                isbn = it.isbn.orEmpty(),
+                title = it.title.orEmpty(),
+                description = it.description.orEmpty(),
+                publisher = it.publisher.orEmpty(),
+                author = it.author.orEmpty(),
+                contributor = it.contributor.orEmpty(),
+                price = it.price ?: 0.0f
+            )
+        }.orEmpty()
 }

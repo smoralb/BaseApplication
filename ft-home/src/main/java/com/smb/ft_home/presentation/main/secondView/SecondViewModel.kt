@@ -24,13 +24,13 @@ class SecondViewModel(
             getSampleDataUseCase(Unit).fold(
                 onFailure = {},
                 onSuccess = {
-                    it.bookDetails.first { bookDetails ->
+                    /*it.bookDetails.first { bookDetails ->
                         bookDetails.isbn == isbn
                     }.also { details ->
                         title update details.title
                         description update details.description
                         publisher update details.publisher
-                    }
+                    }*/
                 }
             )
         }

@@ -36,7 +36,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_bookList"
-            android:layout_width="@dimen/match_constraint"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/match_constraint"
             app:items="@{viewModel.itemList}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

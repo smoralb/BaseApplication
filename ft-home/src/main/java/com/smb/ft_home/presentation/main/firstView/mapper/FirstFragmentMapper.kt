@@ -1,25 +1,25 @@
 package com.smb.ft_home.presentation.main.firstView.mapper
 
-import com.smb.ft_home.domain.model.SampleChildDetailsModel
-import com.smb.ft_home.presentation.main.firstView.adapter.SampleDataItems
+import com.smb.ft_home.domain.model.BooksList
+import com.smb.ft_home.presentation.main.firstView.adapter.SampleDataItems.SampleDataItem
 
 interface FirstFragmentMapper {
-    fun mapItems(model: List<SampleChildDetailsModel>, itemClickListener: (String) -> Unit)
-            : List<SampleDataItems.SampleDataItem>
+    fun mapItems(model: BooksList, itemClickListener: (String) -> Unit)
+            : List<SampleDataItem>
 }
 
 class FirstFragmentMapperImpl : FirstFragmentMapper {
 
     override fun mapItems(
-        model: List<SampleChildDetailsModel>,
+        model: BooksList,
         itemClickListener: (String) -> Unit
-    ) =
-        model.map {
-            SampleDataItems.SampleDataItem(
-                isbn = it.isbn,
-                title = it.title,
-                description = it.description,
-                publisher = it.publisher,
+    ): List<SampleDataItem> =
+        model.booksList.flatMap { it.booksDetails }.map { bookDetails ->
+            SampleDataItem(
+                isbn = bookDetails.isbn,
+                title = bookDetails.title,
+                description = bookDetails.description,
+                publisher = bookDetails.publisher,
                 onItemClickListener = itemClickListener
             )
         }
