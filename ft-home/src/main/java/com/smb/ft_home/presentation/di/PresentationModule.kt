@@ -14,6 +14,6 @@ val presentationModule = module {
     factory<FirstFragmentMapper> { FirstFragmentMapperImpl() }
     factory<DetailsUiMapper> { DetailsUiMapperImpl() }
 
-    viewModel { HomeViewModel(getSampleDataUseCase = get(), mapper = get()) }
-    viewModel { DetailsViewModel(getSampleDataUseCase = get(), mapper = get()) }
+    viewModel { HomeViewModel(repository = get(), mapper = get()) }
+    viewModel { DetailsViewModel(repository = get(), mapper = get()) }
 }
