@@ -1,25 +1,25 @@
-package com.smb.ft_home.presentation.main.firstView
+package com.smb.ft_home.presentation.home
 
 import androidx.lifecycle.MutableLiveData
-import com.smb.ft_home.presentation.main.firstView.adapter.SampleDataItems
-import com.smb.ft_home.presentation.main.firstView.mapper.FirstFragmentMapper
+import com.smb.ft_home.presentation.home.adapter.HomeDataItems
+import com.smb.ft_home.presentation.home.mapper.FirstFragmentMapper
 import com.example.core.extensions.EMPTY_STRING
 import com.example.core.extensions.execute
 import com.example.core.extensions.update
 import com.example.core.presentation.base.BaseViewModel
 import com.smb.ft_home.domain.usecases.GetSampleDataUseCase
 
-class FirstViewModel(
+class HomeViewModel(
     private val getSampleDataUseCase: GetSampleDataUseCase,
     private val mapper: FirstFragmentMapper
-) : BaseViewModel<FirstViewState>() {
+) : BaseViewModel<HomeState>() {
 
     val firstViewModelText: MutableLiveData<String> = MutableLiveData(EMPTY_STRING)
-    val itemList: MutableLiveData<List<SampleDataItems.SampleDataItem>> =
+    val itemList: MutableLiveData<List<HomeDataItems.HomeDataItem>> =
         MutableLiveData(emptyList())
 
     private val onItemClickListener: (String) -> Unit = {
-        _viewState update FirstViewState.NavigateToSecondFragment(isbn = it)
+        _viewState update HomeState.NavigateToSecondFragment(isbn = it)
     }
 
     fun initialize() {
@@ -27,16 +27,16 @@ class FirstViewModel(
     }
 
     private fun getSampleData() {
-        _viewState update FirstViewState.Loading
+        _viewState update HomeState.Loading
         execute {
             getSampleDataUseCase(Unit).fold(
                 onSuccess = { bookList ->
                     itemList update mapper.mapItems(bookList, onItemClickListener)
-                    _viewState update FirstViewState.HideLoading
+                    _viewState update HomeState.HideLoading
                 },
                 onFailure = {
                     firstViewModelText update "Error"
-                    _viewState update FirstViewState.HideLoading
+                    _viewState update HomeState.HideLoading
                 }
             )
         }

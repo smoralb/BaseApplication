@@ -1,15 +1,17 @@
-package com.smb.ft_home.presentation.main.secondView
+package com.smb.ft_home.presentation.details
 
 import androidx.lifecycle.MutableLiveData
-import com.smb.ft_home.domain.usecases.GetSampleDataUseCase
 import com.example.core.extensions.EMPTY_STRING
 import com.example.core.extensions.execute
 import com.example.core.extensions.update
 import com.example.core.presentation.base.BaseViewModel
+import com.smb.ft_home.domain.usecases.GetSampleDataUseCase
+import com.smb.ft_home.presentation.details.mapper.DetailsUiMapper
 
-class SecondViewModel(
-    private val getSampleDataUseCase: GetSampleDataUseCase
-) : BaseViewModel<SecondViewState>() {
+class DetailsViewModel(
+    private val getSampleDataUseCase: GetSampleDataUseCase,
+    private val mapper: DetailsUiMapper
+) : BaseViewModel<DetailsState>() {
 
     val title: MutableLiveData<String> = MutableLiveData(EMPTY_STRING)
     val description: MutableLiveData<String> = MutableLiveData(EMPTY_STRING)
@@ -24,13 +26,10 @@ class SecondViewModel(
             getSampleDataUseCase(Unit).fold(
                 onFailure = {},
                 onSuccess = {
-                    /*it.bookDetails.first { bookDetails ->
-                        bookDetails.isbn == isbn
-                    }.also { details ->
-                        title update details.title
-                        description update details.description
-                        publisher update details.publisher
-                    }*/
+                    val details = mapper.mapItems(isbn, it)
+                    title update details.title
+                    description update details.description
+                    publisher update details.publisher
                 }
             )
         }
