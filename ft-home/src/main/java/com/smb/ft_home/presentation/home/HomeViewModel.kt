@@ -5,12 +5,12 @@ import com.example.core.extensions.EMPTY_STRING
 import com.example.core.extensions.execute
 import com.example.core.extensions.update
 import com.example.core.presentation.base.BaseViewModel
-import com.smb.ft_home.domain.repository.SampleDataRepository
+import com.smb.ft_home.domain.repository.HomeRepository
 import com.smb.ft_home.presentation.home.adapter.HomeDataItems
 import com.smb.ft_home.presentation.home.mapper.FirstFragmentMapper
 
 class HomeViewModel(
-    private val repository: SampleDataRepository,
+    private val repository: HomeRepository,
     private val mapper: FirstFragmentMapper
 ) : BaseViewModel<HomeState>() {
 
@@ -29,7 +29,7 @@ class HomeViewModel(
     private fun getSampleData() {
         _viewState update HomeState.Loading
         execute {
-            repository.getSampleData().fold(
+            repository.getBooksList().fold(
                 onSuccess = { bookList ->
                     itemList update mapper.mapItems(bookList, onItemClickListener)
                     _viewState update HomeState.HideLoading

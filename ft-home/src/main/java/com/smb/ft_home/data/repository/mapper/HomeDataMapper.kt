@@ -7,7 +7,12 @@ import com.smb.ft_home.domain.model.Book
 import com.smb.ft_home.domain.model.BookDetails
 import com.smb.ft_home.domain.model.BooksList
 
-class SampleDataMapperImpl : SampleDataMapper {
+interface HomeDataMapper {
+
+    fun toDomainModel(entity: BooksResultEntity?): BooksList
+}
+
+class HomeDataMapperImpl : HomeDataMapper {
 
     override fun toDomainModel(entity: BooksResultEntity?): BooksList =
         BooksList(

@@ -5,11 +5,11 @@ import com.example.core.extensions.EMPTY_STRING
 import com.example.core.extensions.execute
 import com.example.core.extensions.update
 import com.example.core.presentation.base.BaseViewModel
-import com.smb.ft_home.domain.repository.SampleDataRepository
+import com.smb.ft_home.domain.repository.HomeRepository
 import com.smb.ft_home.presentation.details.mapper.DetailsUiMapper
 
 class DetailsViewModel(
-    private val repository: SampleDataRepository,
+    private val repository: HomeRepository,
     private val mapper: DetailsUiMapper
 ) : BaseViewModel<DetailsState>() {
 
@@ -23,7 +23,7 @@ class DetailsViewModel(
 
     fun init(isbn: String) {
         execute {
-            repository.getSampleData().fold(
+            repository.getBooksList().fold(
                 onSuccess = {
                     val details = mapper.mapItems(isbn, it)
                     title update details.title
