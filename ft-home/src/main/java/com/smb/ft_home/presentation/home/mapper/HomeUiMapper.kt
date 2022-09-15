@@ -1,7 +1,7 @@
-package com.smb.ft_home.presentation.ui.home.mapper
+package com.smb.ft_home.presentation.home.mapper
 
 import com.smb.ft_home.domain.model.BooksList
-import com.smb.ft_home.presentation.ui.home.adapter.HomeDataItems.HomeDataItem
+import com.smb.ft_home.presentation.home.adapter.HomeDataItems.HomeDataItem
 
 interface FirstFragmentMapper {
     fun mapItems(model: BooksList, itemClickListener: (String) -> Unit)

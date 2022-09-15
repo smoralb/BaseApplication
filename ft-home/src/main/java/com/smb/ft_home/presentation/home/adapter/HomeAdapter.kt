@@ -1,4 +1,4 @@
-package com.smb.ft_home.presentation.ui.home.adapter
+package com.smb.ft_home.presentation.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

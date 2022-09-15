@@ -1,9 +1,9 @@
 package com.smb.ft_home.presentation.di
 
-import com.smb.ft_home.presentation.ui.home.HomeViewModel
-import com.smb.ft_home.presentation.ui.home.mapper.FirstFragmentMapper
-import com.smb.ft_home.presentation.ui.home.mapper.FirstFragmentMapperImpl
-import com.smb.ft_home.presentation.ui.details.DetailsViewModel
+import com.smb.ft_home.presentation.home.HomeViewModel
+import com.smb.ft_home.presentation.home.mapper.FirstFragmentMapper
+import com.smb.ft_home.presentation.home.mapper.FirstFragmentMapperImpl
+import com.smb.ft_home.presentation.details.DetailsViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

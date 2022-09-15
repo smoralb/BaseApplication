@@ -1,4 +1,4 @@
-package com.smb.ft_home.presentation.ui.details
+package com.smb.ft_home.presentation.details
 
 import androidx.lifecycle.MutableLiveData
 import com.smb.ft_home.domain.usecases.GetSampleDataUseCase

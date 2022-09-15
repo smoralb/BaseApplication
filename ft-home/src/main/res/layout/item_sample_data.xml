@@ -8,7 +8,7 @@
 
         <variable
             name="item"
-            type="com.smb.ft_home.presentation.ui.home.adapter.HomeDataItems.HomeDataItem" />
+            type="com.smb.ft_home.presentation.home.adapter.HomeDataItems.HomeDataItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

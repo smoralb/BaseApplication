@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/HomeFragment"
-        android:name="com.smb.ft_home.presentation.ui.home.HomeFragment"
+        android:name="com.smb.ft_home.presentation.home.HomeFragment"
         android:label="@string/fragment_home_label"
         tools:layout="@layout/fragment_home">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/FragmentDetails"
-        android:name="com.smb.ft_home.presentation.ui.details.DetailsFragment"
+        android:name="com.smb.ft_home.presentation.details.DetailsFragment"
         android:label="@string/fragment_details_label"
         tools:layout="@layout/fragment_details">
         <action

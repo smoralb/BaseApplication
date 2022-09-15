@@ -1,8 +1,8 @@
-package com.smb.ft_home.presentation.ui.home
+package com.smb.ft_home.presentation.home
 
 import androidx.lifecycle.MutableLiveData
-import com.smb.ft_home.presentation.ui.home.adapter.HomeDataItems
-import com.smb.ft_home.presentation.ui.home.mapper.FirstFragmentMapper
+import com.smb.ft_home.presentation.home.adapter.HomeDataItems
+import com.smb.ft_home.presentation.home.mapper.FirstFragmentMapper
 import com.example.core.extensions.EMPTY_STRING
 import com.example.core.extensions.execute
 import com.example.core.extensions.update

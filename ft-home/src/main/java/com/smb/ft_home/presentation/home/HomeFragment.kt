@@ -1,4 +1,4 @@
-package com.smb.ft_home.presentation.ui.home
+package com.smb.ft_home.presentation.home
 
 import android.os.Bundle
 import android.view.View
@@ -6,10 +6,10 @@ import com.example.core.presentation.base.BaseFragment
 import com.smb.ft_home.BR
 import com.smb.ft_home.R
 import com.smb.ft_home.databinding.FragmentHomeBinding
-import com.smb.ft_home.presentation.ui.home.HomeState.HideLoading
-import com.smb.ft_home.presentation.ui.home.HomeState.Loading
-import com.smb.ft_home.presentation.ui.home.HomeState.NavigateToSecondFragment
-import com.smb.ft_home.presentation.ui.home.adapter.HomeAdapter
+import com.smb.ft_home.presentation.home.HomeState.HideLoading
+import com.smb.ft_home.presentation.home.HomeState.Loading
+import com.smb.ft_home.presentation.home.HomeState.NavigateToSecondFragment
+import com.smb.ft_home.presentation.home.adapter.HomeAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment :

@@ -1,4 +1,4 @@
-package com.smb.ft_home.presentation.ui.home
+package com.smb.ft_home.presentation.home
 
 import com.example.core.presentation.base.BaseState
 
