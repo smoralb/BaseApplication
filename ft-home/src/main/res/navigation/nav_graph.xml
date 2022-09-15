@@ -12,13 +12,13 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/toDetails"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/FragmentDetails" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.smb.ft_home.presentation.ui.secondView.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/FragmentDetails"
+        android:name="com.smb.ft_home.presentation.ui.details.DetailsFragment"
+        android:label="@string/fragment_details_label"
+        tools:layout="@layout/fragment_details">
         <action
             android:id="@+id/toFirstFragment"
             app:destination="@+id/HomeFragment" />

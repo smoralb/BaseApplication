@@ -7,13 +7,13 @@
 
         <variable
             name="viewModel"
-            type="com.smb.ft_home.presentation.ui.secondView.SecondViewModel" />
+            type="com.smb.ft_home.presentation.ui.details.DetailsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.ui.secondView.SecondFragment">
+        tools:context=".presentation.ui.details.DetailsFragment">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/toolbar"

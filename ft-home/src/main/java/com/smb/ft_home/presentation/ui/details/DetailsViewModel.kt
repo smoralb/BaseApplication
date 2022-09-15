@@ -1,4 +1,4 @@
-package com.smb.ft_home.presentation.ui.secondView
+package com.smb.ft_home.presentation.ui.details
 
 import androidx.lifecycle.MutableLiveData
 import com.smb.ft_home.domain.usecases.GetSampleDataUseCase
@@ -6,9 +6,9 @@ import com.example.core.extensions.EMPTY_STRING
 import com.example.core.extensions.execute
 import com.example.core.presentation.base.BaseViewModel
 
-class SecondViewModel(
+class DetailsViewModel(
     private val getSampleDataUseCase: GetSampleDataUseCase
-) : BaseViewModel<SecondViewState>() {
+) : BaseViewModel<DetailsState>() {
 
     val title: MutableLiveData<String> = MutableLiveData(EMPTY_STRING)
     val description: MutableLiveData<String> = MutableLiveData(EMPTY_STRING)
